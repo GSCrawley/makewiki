@@ -1,9 +1,18 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.views import LoginView
 
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from wiki.models import Page
+from wiki.forms import PageForm
 
+@login_required(login_url='/templates/registration/login/')
+
+def logout_view(request):
+    logout(request)
+    
 
 class PageListView(ListView):
     """ Renders a list of all Pages. """
