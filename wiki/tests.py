@@ -67,9 +67,3 @@ class PageDetailViewTests(TestCase):
         self.assertContains(response, "rainbows")
         self.assertContains(response, user)
 
-#steps to writing a test:
-
-# 1. Set up your test data
-# 2. Make a request (GET, POST)
-# 3a. Check if response matches what we expect
-# 3b. Check if database matches what we expect
